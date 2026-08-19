@@ -2,185 +2,1385 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LaStar 拉星 - 下载</title>
+
+<meta name="viewport"
+      content="width=device-width,
+      initial-scale=1.0,
+      viewport-fit=cover">
+
+<meta name="theme-color" content="#080A16">
+
+<title>LaStar 拉星｜官方下载</title>
+
+<meta name="description"
+      content="LaStar 拉星 Android 内测版官方下载。女性同频社交宇宙，不刷人，遇见人。">
 
 <style>
-*{box-sizing:border-box}
+
+:root{
+    --bg:#070916;
+    --bg2:#0D1024;
+
+    --purple:#7A6CFF;
+    --purple2:#9B6CFF;
+    --blue:#4FC3FF;
+
+    --pink:#FF7FA6;
+    --gold:#FFC86B;
+
+    --white:#FFFFFF;
+    --text:#F5F5FA;
+    --muted:#A8AEC8;
+
+    --card:rgba(255,255,255,.055);
+    --border:rgba(255,255,255,.10);
+}
+
+/* ================================
+   基础
+================================ */
+
+*{
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
 
 body{
-  margin:0;
-  min-height:100vh;
-  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
-  color:#fff;
-  background:
-    radial-gradient(circle at 20% 20%, rgba(122,108,255,.24), transparent 30%),
-    radial-gradient(circle at 80% 30%, rgba(76,201,255,.16), transparent 26%),
-    radial-gradient(circle at 70% 80%, rgba(255,110,166,.10), transparent 28%),
-    #090b18;
+    margin:0;
+
+    font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "SF Pro Display",
+    "PingFang SC",
+    "HarmonyOS Sans SC",
+    "Microsoft YaHei",
+    sans-serif;
+
+    color:var(--text);
+
+    background:
+    radial-gradient(
+        circle at 15% 15%,
+        rgba(122,108,255,.25),
+        transparent 28%
+    ),
+
+    radial-gradient(
+        circle at 85% 30%,
+        rgba(79,195,255,.15),
+        transparent 26%
+    ),
+
+    radial-gradient(
+        circle at 50% 90%,
+        rgba(155,108,255,.14),
+        transparent 35%
+    ),
+
+    var(--bg);
+
+    overflow-x:hidden;
 }
 
-.wrap{
-  max-width:720px;
-  margin:0 auto;
-  padding:56px 22px 70px;
-  text-align:center;
+/* ================================
+   星空
+================================ */
+
+.stars,
+.stars2{
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    z-index:-1;
 }
 
-.logo{
-  width:104px;
-  height:104px;
-  border-radius:24px;
-  margin:0 auto 20px;
-  background:linear-gradient(145deg,#25294e,#0d1026);
-  box-shadow:0 20px 60px rgba(95,80,255,.28);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:50px;
+.stars{
+    background-image:
+
+    radial-gradient(
+        1px 1px at 10% 20%,
+        white,
+        transparent
+    ),
+
+    radial-gradient(
+        1px 1px at 18% 72%,
+        white,
+        transparent
+    ),
+
+    radial-gradient(
+        1.5px 1.5px at 28% 33%,
+        #AFA7FF,
+        transparent
+    ),
+
+    radial-gradient(
+        1px 1px at 36% 80%,
+        white,
+        transparent
+    ),
+
+    radial-gradient(
+        1px 1px at 48% 12%,
+        white,
+        transparent
+    ),
+
+    radial-gradient(
+        1.5px 1.5px at 57% 58%,
+        #89CBFF,
+        transparent
+    ),
+
+    radial-gradient(
+        1px 1px at 68% 26%,
+        white,
+        transparent
+    ),
+
+    radial-gradient(
+        1.5px 1.5px at 75% 70%,
+        #D0B9FF,
+        transparent
+    ),
+
+    radial-gradient(
+        1px 1px at 88% 42%,
+        white,
+        transparent
+    ),
+
+    radial-gradient(
+        1px 1px at 95% 82%,
+        white,
+        transparent
+    );
 }
 
-h1{
-  margin:0;
-  font-size:42px;
+.stars2{
+
+    opacity:.4;
+
+    background-image:
+
+    radial-gradient(
+        1px 1px at 14% 48%,
+        white,
+        transparent
+    ),
+
+    radial-gradient(
+        1px 1px at 31% 62%,
+        white,
+        transparent
+    ),
+
+    radial-gradient(
+        1px 1px at 43% 25%,
+        #7A6CFF,
+        transparent
+    ),
+
+    radial-gradient(
+        1px 1px at 63% 74%,
+        white,
+        transparent
+    ),
+
+    radial-gradient(
+        1px 1px at 79% 15%,
+        white,
+        transparent
+    ),
+
+    radial-gradient(
+        1px 1px at 91% 55%,
+        #4FC3FF,
+        transparent
+    );
 }
 
-.sub{
-  margin-top:10px;
-  color:#aeb5d4;
-  font-size:18px;
+/* ================================
+   微信内打开提示
+================================ */
+
+.wechat-tip{
+
+    display:none;
+
+    position:sticky;
+
+    top:0;
+
+    z-index:100;
+
+    padding:
+
+    calc(
+        11px + env(safe-area-inset-top)
+    )
+
+    16px
+
+    11px;
+
+    text-align:center;
+
+    color:#FFF5CF;
+
+    font-size:13px;
+
+    line-height:1.6;
+
+    background:
+    rgba(28,22,50,.96);
+
+    border-bottom:
+    1px solid
+    rgba(255,200,107,.22);
+
+    backdrop-filter:blur(18px);
+}
+
+/* ================================
+   页面
+================================ */
+
+.container{
+
+    width:min(
+        760px,
+        calc(100% - 36px)
+    );
+
+    margin:0 auto;
+
+    padding:
+
+    64px
+    0
+    90px;
+}
+
+/* ================================
+   Hero
+================================ */
+
+.hero{
+
+    text-align:center;
+
+    padding-top:10px;
+}
+
+.icon-wrap{
+
+    position:relative;
+
+    width:116px;
+    height:116px;
+
+    margin:0 auto 24px;
+}
+
+.icon-glow{
+
+    position:absolute;
+
+    inset:-24px;
+
+    background:
+    radial-gradient(
+        circle,
+        rgba(122,108,255,.36),
+        transparent 66%
+    );
+
+    filter:blur(16px);
+}
+
+.app-icon{
+
+    position:relative;
+
+    width:116px;
+    height:116px;
+
+    object-fit:cover;
+
+    border-radius:28px;
+
+    border:
+    1px solid
+    rgba(255,255,255,.14);
+
+    box-shadow:
+
+    0 25px 80px
+    rgba(83,70,255,.30),
+
+    inset 0 0 20px
+    rgba(255,255,255,.03);
+
+    background:#11152B;
+}
+
+.brand{
+
+    margin:0;
+
+    font-size:
+    clamp(
+        38px,
+        8vw,
+        52px
+    );
+
+    letter-spacing:-1.6px;
+
+    font-weight:780;
+}
+
+.brand-en{
+
+    background:
+    linear-gradient(
+        90deg,
+        #FFFFFF,
+        #C4BDFF,
+        #8E82FF
+    );
+
+    -webkit-background-clip:text;
+
+    -webkit-text-fill-color:
+    transparent;
+}
+
+.brand-sub{
+
+    margin-top:9px;
+
+    color:#B3B9D4;
+
+    font-size:16px;
+
+    letter-spacing:2px;
 }
 
 .slogan{
-  margin:42px 0 10px;
-  font-size:28px;
-  font-weight:700;
+
+    margin-top:46px;
+
+    font-size:
+    clamp(
+        25px,
+        6vw,
+        34px
+    );
+
+    font-weight:750;
+
+    letter-spacing:-.5px;
 }
 
-.slogan2{
-  color:#aab1cf;
-  font-size:16px;
-  line-height:1.8;
+.slogan-sub{
+
+    margin-top:12px;
+
+    color:#A9AFC9;
+
+    font-size:15px;
+
+    line-height:1.8;
 }
+
+/* ================================
+   卡片
+================================ */
 
 .card{
-  margin-top:38px;
-  padding:26px;
-  border-radius:24px;
-  background:rgba(255,255,255,.06);
-  border:1px solid rgba(255,255,255,.10);
-  backdrop-filter:blur(12px);
+
+    position:relative;
+
+    overflow:hidden;
+
+    margin-top:38px;
+
+    padding:30px;
+
+    border-radius:26px;
+
+    background:
+    linear-gradient(
+        145deg,
+        rgba(255,255,255,.075),
+        rgba(255,255,255,.035)
+    );
+
+    border:
+    1px solid
+    var(--border);
+
+    box-shadow:
+    0 20px 80px
+    rgba(0,0,0,.18);
+
+    backdrop-filter:
+    blur(20px);
 }
 
-.btn{
-  display:block;
-  width:100%;
-  padding:18px 20px;
-  margin-top:18px;
-  text-decoration:none;
-  color:#fff;
-  font-weight:700;
-  font-size:18px;
-  border-radius:16px;
-  background:linear-gradient(90deg,#7A6CFF,#7B54E8);
-  box-shadow:0 12px 30px rgba(122,108,255,.30);
+.card::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:190px;
+    height:190px;
+
+    right:-70px;
+    top:-80px;
+
+    border-radius:50%;
+
+    background:
+    rgba(122,108,255,.11);
+
+    filter:blur(20px);
 }
 
-.btn-ios{
-  background:rgba(255,255,255,.08);
-  color:#aeb5d4;
-  box-shadow:none;
+.section-title{
+
+    position:relative;
+
+    z-index:1;
+
+    margin:0;
+
+    font-size:22px;
+
+    font-weight:720;
 }
 
-.info{
-  margin-top:20px;
-  font-size:14px;
-  line-height:1.8;
-  color:#9ea5c3;
+.section-desc{
+
+    margin-top:8px;
+
+    color:var(--muted);
+
+    font-size:14px;
+
+    line-height:1.7;
 }
 
-.notice{
-  margin-top:34px;
-  text-align:left;
-  padding:20px;
-  border-radius:18px;
-  background:rgba(255,255,255,.04);
-  color:#b8bfdc;
-  line-height:1.8;
-  font-size:14px;
+/* ================================
+   下载
+================================ */
+
+.version-row{
+
+    position:relative;
+
+    z-index:1;
+
+    display:flex;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:8px;
+
+    margin-top:18px;
 }
+
+.badge{
+
+    padding:
+    7px
+    11px;
+
+    border-radius:999px;
+
+    color:#BCB5FF;
+
+    font-size:12px;
+
+    background:
+    rgba(122,108,255,.10);
+
+    border:
+    1px solid
+    rgba(122,108,255,.22);
+}
+
+.download-btn{
+
+    position:relative;
+
+    z-index:1;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:10px;
+
+    width:100%;
+
+    margin-top:24px;
+
+    padding:
+    18px
+    20px;
+
+    border-radius:17px;
+
+    text-decoration:none;
+
+    color:white;
+
+    font-size:17px;
+
+    font-weight:720;
+
+    background:
+    linear-gradient(
+        100deg,
+        #7167FF,
+        #8956EB
+    );
+
+    box-shadow:
+    0 14px 40px
+    rgba(122,108,255,.30);
+
+    transition:
+    transform .2s ease,
+    box-shadow .2s ease;
+}
+
+.download-btn:active{
+
+    transform:
+    scale(.985);
+}
+
+.android-icon{
+
+    font-size:21px;
+}
+
+.ios-btn{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    width:100%;
+
+    margin-top:12px;
+
+    padding:
+    17px 20px;
+
+    border-radius:17px;
+
+    color:#8D93AC;
+
+    font-size:15px;
+
+    font-weight:650;
+
+    background:
+    rgba(255,255,255,.055);
+
+    border:
+    1px solid
+    rgba(255,255,255,.05);
+}
+
+/* ================================
+   更新日志
+================================ */
+
+.update-list{
+
+    margin:
+    22px 0 0;
+
+    padding:0;
+
+    list-style:none;
+}
+
+.update-item{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:13px;
+
+    padding:
+    12px 0;
+
+    color:#D9DCEC;
+
+    line-height:1.65;
+
+    font-size:14px;
+
+    border-bottom:
+    1px solid
+    rgba(255,255,255,.055);
+}
+
+.update-item:last-child{
+
+    border-bottom:none;
+}
+
+.update-dot{
+
+    flex:
+    0 0 7px;
+
+    width:7px;
+    height:7px;
+
+    margin-top:8px;
+
+    border-radius:50%;
+
+    background:
+    linear-gradient(
+        135deg,
+        #7A6CFF,
+        #4FC3FF
+    );
+
+    box-shadow:
+    0 0 12px
+    #7A6CFF;
+}
+
+/* ================================
+   安装教程
+================================ */
+
+.steps{
+
+    margin-top:22px;
+
+    display:grid;
+
+    gap:14px;
+}
+
+.step{
+
+    display:flex;
+
+    gap:14px;
+
+    padding:15px;
+
+    border-radius:17px;
+
+    background:
+    rgba(255,255,255,.035);
+
+    border:
+    1px solid
+    rgba(255,255,255,.055);
+}
+
+.step-num{
+
+    flex:
+    0 0 32px;
+
+    width:32px;
+    height:32px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:50%;
+
+    font-size:13px;
+
+    font-weight:700;
+
+    color:#DDD9FF;
+
+    background:
+    rgba(122,108,255,.14);
+
+    border:
+    1px solid
+    rgba(122,108,255,.22);
+}
+
+.step-title{
+
+    font-size:14px;
+
+    font-weight:700;
+}
+
+.step-text{
+
+    margin-top:4px;
+
+    color:#9EA5C1;
+
+    font-size:13px;
+
+    line-height:1.65;
+}
+
+/* ================================
+   提示
+================================ */
+
+.warning{
+
+    margin-top:18px;
+
+    padding:16px;
+
+    border-radius:15px;
+
+    color:#B4B9D0;
+
+    font-size:12.5px;
+
+    line-height:1.75;
+
+    background:
+    rgba(255,200,107,.045);
+
+    border:
+    1px solid
+    rgba(255,200,107,.12);
+}
+
+/* ================================
+   微信公众号二维码
+================================ */
+
+.qr-section{
+
+    text-align:center;
+}
+
+.qr-wrap{
+
+    position:relative;
+
+    width:210px;
+
+    margin:
+    26px auto 18px;
+
+    padding:13px;
+
+    border-radius:24px;
+
+    background:white;
+
+    box-shadow:
+    0 18px 60px
+    rgba(0,0,0,.25);
+}
+
+.qr{
+
+    display:block;
+
+    width:100%;
+
+    border-radius:12px;
+}
+
+.qr-title{
+
+    font-size:19px;
+
+    font-weight:700;
+}
+
+.qr-text{
+
+    margin:
+    9px auto 0;
+
+    max-width:400px;
+
+    color:#A4ABC7;
+
+    font-size:13px;
+
+    line-height:1.75;
+}
+
+/* ================================
+   Footer
+================================ */
 
 .footer{
-  margin-top:42px;
-  color:#747c9f;
-  font-size:13px;
+
+    margin-top:50px;
+
+    text-align:center;
+
+    color:#727995;
+
+    font-size:12px;
+
+    line-height:1.8;
 }
+
+.footer-brand{
+
+    margin-bottom:6px;
+
+    color:#9A9FBB;
+
+    font-size:13px;
+}
+
+/* ================================
+   手机
+================================ */
+
+@media(max-width:600px){
+
+    .container{
+
+        width:
+        calc(100% - 28px);
+
+        padding:
+        42px
+        0
+        70px;
+    }
+
+    .icon-wrap,
+    .app-icon{
+
+        width:96px;
+        height:96px;
+    }
+
+    .app-icon{
+
+        border-radius:23px;
+    }
+
+    .brand{
+
+        font-size:38px;
+    }
+
+    .brand-sub{
+
+        font-size:14px;
+    }
+
+    .slogan{
+
+        margin-top:34px;
+    }
+
+    .card{
+
+        margin-top:26px;
+
+        padding:
+        23px 19px;
+
+        border-radius:22px;
+    }
+
+    .section-title{
+
+        font-size:20px;
+    }
+
+    .download-btn{
+
+        padding:
+        17px 15px;
+    }
+
+    .qr-wrap{
+
+        width:190px;
+    }
+}
+
 </style>
 </head>
 
+
 <body>
 
-<div class="wrap">
+<div class="stars"></div>
+<div class="stars2"></div>
 
-  <div class="logo">✦</div>
+<div
+    class="wechat-tip"
+    id="wechatTip">
 
-  <h1>LaStar 拉星</h1>
-
-  <div class="sub">女性同频社交宇宙</div>
-
-  <div class="slogan">
-    不刷人，遇见人。
-  </div>
-
-  <div class="slogan2">
-    在宇宙里，遇见更同频的人。
-  </div>
-
-  <div class="card">
-
-    <h2>Android 内测版</h2>
-
-    <p style="color:#aeb5d4;">
-      当前版本：Beta v0.1.0
-    </p>
-
-    <a class="btn"
-       href="https://github.com/norawu688-debug/lastar-download/releases/download/v0.1.0/LaStar-Android-Beta-v0.1.0.apk">
-      下载 Android APK
-    </a>
-
-    <a class="btn btn-ios"
-       href="javascript:void(0)">
-      iOS 版本即将开放
-    </a>
-
-    <div class="info">
-      文件大小：约 73.6 MB<br>
-      适用于 Android 手机
-    </div>
-
-  </div>
-
-  <div class="notice">
-
-    <b>安装提示</b><br><br>
-
-    1. 点击“下载 Android APK”。<br>
-    2. 如果微信内无法直接下载，请点击右上角「…」。<br>
-    3. 选择「在浏览器打开」。<br>
-    4. 下载完成后安装即可。<br><br>
-
-    LaStar 目前仍处于内测阶段，部分 Android 手机可能提示
-    “未知来源应用”或“风险提示”，请确认下载来源为 LaStar 官方页面后继续安装。
-
-  </div>
-
-  <div class="footer">
-    LaStar 拉星<br>
-    在宇宙里，找到自己的那颗星。
-  </div>
+    微信内如无法下载 APK，请点击右上角「···」
+    → 选择「在浏览器打开」
 
 </div>
+
+
+<main class="container">
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="icon-wrap">
+
+        <div class="icon-glow"></div>
+
+        <img
+            src="app-icon.png"
+            alt="LaStar App Icon"
+            class="app-icon">
+
+    </div>
+
+
+    <h1 class="brand">
+
+        <span class="brand-en">
+            LaStar
+        </span>
+
+        拉星
+
+    </h1>
+
+
+    <div class="brand-sub">
+
+        女性同频社交宇宙
+
+    </div>
+
+
+    <div class="slogan">
+
+        不刷人，遇见人。
+
+    </div>
+
+
+    <div class="slogan-sub">
+
+        让相似的灵魂，
+        在宇宙里互相看见。
+
+    </div>
+
+</section>
+
+
+<!-- DOWNLOAD -->
+
+<section class="card">
+
+    <h2 class="section-title">
+
+        Android 内测版
+
+    </h2>
+
+
+    <div class="section-desc">
+
+        LaStar 正在早期内测中。<br>
+        欢迎成为最早来到这里的人。
+
+    </div>
+
+
+    <div class="version-row">
+
+        <span class="badge">
+            Beta v0.1.0
+        </span>
+
+        <span class="badge">
+            Android
+        </span>
+
+        <span class="badge">
+            73.6 MB
+        </span>
+
+    </div>
+
+
+    <a
+        class="download-btn"
+        href="https://github.com/lastar-official/lastar-download/releases/download/v0.1.0/LaStar-Android-Beta-v0.1.0.apk">
+
+        <span class="android-icon">
+            ↓
+        </span>
+
+        立即下载 LaStar
+
+    </a>
+
+
+    <div class="ios-btn">
+
+         iOS 版本正在准备中
+
+    </div>
+
+</section>
+
+
+<!-- UPDATE -->
+
+<section class="card">
+
+    <h2 class="section-title">
+
+        ✦ 本次更新
+
+    </h2>
+
+
+    <div class="section-desc">
+
+        Beta v0.1.0 · 首个 LaStar Android 内测版本
+
+    </div>
+
+
+    <ul class="update-list">
+
+        <li class="update-item">
+
+            <span class="update-dot"></span>
+
+            <span>
+                进入「宇宙」，发现与你产生共振的星。
+            </span>
+
+        </li>
+
+
+        <li class="update-item">
+
+            <span class="update-dot"></span>
+
+            <span>
+                「星讯」上线，看见正在发生的表达与此刻。
+            </span>
+
+        </li>
+
+
+        <li class="update-item">
+
+            <span class="update-dot"></span>
+
+            <span>
+                「星轨」记录人与人之间逐渐产生的连接。
+            </span>
+
+        </li>
+
+
+        <li class="update-item">
+
+            <span class="update-dot"></span>
+
+            <span>
+                完善个人空间与兴趣展示体验。
+            </span>
+
+        </li>
+
+
+        <li class="update-item">
+
+            <span class="update-dot"></span>
+
+            <span>
+                优化界面、交互体验与部分稳定性问题。
+            </span>
+
+        </li>
+
+    </ul>
+
+</section>
+
+
+<!-- INSTALL -->
+
+<section class="card">
+
+    <h2 class="section-title">
+
+        ✦ Android 安装教程
+
+    </h2>
+
+
+    <div class="section-desc">
+
+        第一次安装内测 App？
+        跟着下面四步就可以。
+
+    </div>
+
+
+    <div class="steps">
+
+
+        <div class="step">
+
+            <div class="step-num">
+                1
+            </div>
+
+            <div>
+
+                <div class="step-title">
+                    点击下载
+                </div>
+
+                <div class="step-text">
+
+                    点击页面上方
+                    「立即下载 LaStar」。
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="step">
+
+            <div class="step-num">
+                2
+            </div>
+
+            <div>
+
+                <div class="step-title">
+                    微信内打不开？
+                </div>
+
+                <div class="step-text">
+
+                    点击微信右上角「···」，
+                    选择「在浏览器打开」。
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="step">
+
+            <div class="step-num">
+                3
+            </div>
+
+            <div>
+
+                <div class="step-title">
+                    打开 APK
+                </div>
+
+                <div class="step-text">
+
+                    下载完成后，
+                    点击下载好的 APK 文件。
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="step">
+
+            <div class="step-num">
+                4
+            </div>
+
+            <div>
+
+                <div class="step-title">
+                    完成安装
+                </div>
+
+                <div class="step-text">
+
+                    根据手机系统提示允许本次安装，
+                    即可进入 LaStar。
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="warning">
+
+        LaStar 当前为 Android 内测版本，
+        尚未通过各品牌手机应用商店分发。
+
+        因此部分设备可能显示
+        「未知来源应用」
+        或类似安全提示。
+
+        请确认当前页面地址为
+        LaStar 官方 GitHub Pages
+        后再进行安装。
+
+    </div>
+
+</section>
+
+
+<!-- QR -->
+
+<section class="card qr-section">
+
+    <h2 class="section-title">
+
+        ✦ 关注 LaStar 拉星
+
+    </h2>
+
+
+    <div class="section-desc">
+
+        获取内测资格、版本更新、产品故事和共创招募。
+
+    </div>
+
+
+    <div class="qr-wrap">
+
+        <img
+            src="wechat-qr.jpg"
+            alt="LaStar 微信公众号二维码"
+            class="qr">
+
+    </div>
+
+
+    <div class="qr-title">
+
+        微信搜一搜：LaStar 拉星
+
+    </div>
+
+
+    <div class="qr-text">
+
+        如果你愿意成为最早来到这里的人，
+        欢迎和 LaStar 一起成长。
+
+    </div>
+
+</section>
+
+
+<footer class="footer">
+
+    <div class="footer-brand">
+
+        LaStar 拉星
+
+    </div>
+
+    不刷人，遇见人。<br>
+
+    在宇宙里，
+    找到自己的那颗星。
+
+</footer>
+
+
+</main>
+
+
+<script>
+
+/* 检测微信 */
+
+(function(){
+
+    const ua =
+        navigator.userAgent
+        .toLowerCase();
+
+    if(
+        ua.includes(
+            "micromessenger"
+        )
+    ){
+
+        document
+        .getElementById(
+            "wechatTip"
+        )
+        .style
+        .display =
+        "block";
+
+    }
+
+})();
+
+</script>
+
 
 </body>
 </html>
