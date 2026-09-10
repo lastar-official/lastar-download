@@ -1,5 +1,27 @@
 # Website acceptance — 2026-09-10
 
+## Final deployed acceptance
+
+Source commit `3c7400aa4aeb73469723e20ef029f6e800936a07` passed
+[Linux CI34485485963](https://github.com/lastar-official/lastar-download/actions/runs/34485485963):
+Chromium58 + Firefox58 + WebKit58 = **174/174**, generated-output drift checks,
+and both mobile Lighthouse runs. Home and Download both scored100/100/100/100;
+LCP904/1207ms and CLS0 in that Linux lab run.
+
+The first Linux run exposed a200% text overflow that did not reproduce on Windows.
+The reflow fix allows long English memory labels and relationship steps to wrap;
+the original assertion remains and now saves offending-element diagnostics.
+No global overflow masking was used. All three engines passed the regression.
+
+Public `https://lastar.me` passed the eight-page/asset/metadata/custom404 checker,
+legacy legal links and old GitHub Pages redirect. The final public Chromium run
+passed58 cases again, including mobile/desktop axe and WeChat/iOS handling.
+GitHub Pages custom domain and forced HTTPS remain enabled. The backend is still
+paused; **none of these website passes claim Beta registration is ready**.
+
+The historical local-run notes below retain the Windows Firefox loader limitation;
+the real Firefox acceptance is now supplied by Linux CI, not a skipped engine.
+
 ## Reviewed result
 
 - Brand home, metadata-driven Android download, Privacy, Terms, Community,
