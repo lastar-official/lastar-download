@@ -1,0 +1,35 @@
+name: Assemble Android release assets
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: lastar-rc1-v1.4.0-beta.1
+  cancel-in-progress: false
+
+jobs:
+  release:
+    if: github.repository == 'lastar-official/lastar-download' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: write
+    steps:
+      - name: Read the exact dispatched source revision
+        env:
+          SOURCE_REVISION: ${{ github.sha }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          [[ "$SOURCE_REVISION" =~ ^[0-9a-f]{40}$ ]]
+          git init source
+          git -C source remote add origin https://github.com/lastar-official/lastar-download.git
+          git -C source fetch --depth=1 origin "$SOURCE_REVISION"
+          git -C source checkout --detach FETCH_HEAD
+      - name: Verify, assemble, publish, publicly verify, and clean RC1 transport
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 source/scripts/assemble_rc1.py

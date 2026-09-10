@@ -2,3 +2,5 @@ node_modules/
 qa-artifacts/
 .cache/
 *.log
+__pycache__/
+*.pyc
