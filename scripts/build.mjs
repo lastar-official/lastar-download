@@ -1,5 +1,5 @@
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
-import { pages, legalDate } from '../content/pages.mjs';
+import { pages, legalDate, serviceReadinessNotice, legalSupplementNotice, pushCompatibilityNotice } from '../content/pages.mjs';
 import { validateRelease } from './release-schema.mjs';
 const meta = JSON.parse(await readFile(new URL('../release-meta.json', import.meta.url), 'utf8'));
 validateRelease(meta);
@@ -8,7 +8,14 @@ const nav = `<a class="skip" href="#main">跳至正文</a><header class="topbar 
 const footer = `<footer class="footer"><div class="wrap"><div class="footer-top"><div><a class="brand" href="/"><img src="/assets/brand-mark.svg" width="42" height="42" alt=""><span>LaStar</span></a><p>先好好生活，再遇见同频的人。</p></div><nav class="footer-links" aria-label="页脚导航"><a href="/download">下载 Beta</a><a href="/privacy">隐私政策</a><a href="/terms">服务条款</a><a href="/community-guidelines">社区准则</a><a href="/safety">安全中心</a><a href="/delete-account">删除账号</a><a href="/changelog">更新记录</a><a href="/#wechat">官方公众号</a></nav></div><div class="footer-bottom"><span>© 2026 LaStar · 面向成年女性的邀请制社区</span><span>18+ · 你有自己的节奏。</span></div></div></footer>`;
 function document({title,description,path,body,noindex=false}) {
  const url='https://lastar.me'+path;
- if(path==='/download'&&meta.service_status!=='active')body=body.replace('<div class="download-layout">','<div class="note" role="status"><strong>Beta 服务暂时维护中。</strong>当前注册、登录与在线内容暂不可用。安装包下载验证与服务恢复是独立步骤；请等待官方恢复通知后再注册。</div><div class="download-layout">');
+ if(meta.service_status!=='active') {
+  if(path==='/download')body=body.replace('<div class="download-layout">',serviceReadinessNotice+'<div class="download-layout">');
+  if(path==='/')body=body.replace('<main id="main"><div class="wrap">','<main id="main"><div class="wrap">'+serviceReadinessNotice)
+   .replace('LaStar 正在邀请制 Beta 中。','LaStar 处于邀请制 Beta 的服务恢复验收阶段。')
+   .replace('当前开放 Android Beta。','当前提供 Android Beta 安装包，服务恢复验收尚未完成。');
+ }
+ if(path==='/download')body=body.replace('<section class="install"><h2>几步之后，见。</h2>','<section class="install"><h2>几步之后，见。</h2><div class="note"><strong>先确认通知兼容性。</strong>'+pushCompatibilityNotice+'</div>');
+ if(['/privacy','/terms','/community-guidelines'].includes(path))body=body.replace('<div class="article-layout">',legalSupplementNotice+'<div class="article-layout">');
  return `<!doctype html>\n<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>${esc(title)}</title><meta name="description" content="${esc(description)}"><link rel="canonical" href="${url}"><meta name="theme-color" content="#080b14"><meta property="og:type" content="website"><meta property="og:locale" content="zh_CN"><meta property="og:site_name" content="LaStar"><meta property="og:title" content="${esc(title)}"><meta property="og:description" content="${esc(description)}"><meta property="og:url" content="${url}"><meta property="og:image" content="https://lastar.me/assets/og-lastar.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="LaStar，先好好生活，再遇见同频的人。"><meta name="twitter:card" content="summary_large_image"><link rel="icon" href="/assets/brand-mark.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/assets/apple-touch-icon.png"><link rel="stylesheet" href="/site.css"><script src="/site.js" defer></script>${noindex?'<meta name="robots" content="noindex">':''}</head><body>${nav}${body}${footer}</body></html>\n`;
 }
 async function output(path,data){await mkdir(new URL('../'+path.substring(0,path.lastIndexOf('/')+1),import.meta.url),{recursive:true});await writeFile(new URL('../'+path,import.meta.url),data);}
