@@ -1,0 +1,72 @@
+{
+  "source": "Real Android Beta QA artifacts, 2026-08-26/27; pinned 1.4.0+7 Release screenshots, 2026-09-10",
+  "treatment": "Crop system bars and resize only. No replacement text, compositing, AI UI or identity retouching. September captures show cached/local UI while Beta backend was paused; they do not demonstrate live server data.",
+  "images": [
+    {
+      "name": "universe",
+      "source": "artifacts/release_qa/20260910_pinned_smoke/site-screens/universe.png",
+      "crop": {
+        "left": 0,
+        "top": 120,
+        "width": 1080,
+        "height": 2220
+      },
+      "description": "Pinned 1.4.0+7 Release; cached/offline empty Universe. No identities."
+    },
+    {
+      "name": "activities",
+      "source": "artifacts/android_qa_phase2/20260826_174753/screenshots/A/a_activities.png",
+      "crop": {
+        "left": 0,
+        "top": 120,
+        "width": 1080,
+        "height": 1670
+      },
+      "description": "Activity menu; no identities or private shared content."
+    },
+    {
+      "name": "living-universe",
+      "source": "artifacts/android_qa_phase2/20260826_174753/screenshots/A/a_living_universe.png",
+      "crop": {
+        "left": 0,
+        "top": 120,
+        "width": 1080,
+        "height": 1980
+      },
+      "description": "Living Universe tools; no identities or private content."
+    },
+    {
+      "name": "star-map",
+      "source": "artifacts/android_qa/20260827_000249/screenshots/normal_font_1_0/constellation.png",
+      "crop": {
+        "left": 0,
+        "top": 120,
+        "width": 1080,
+        "height": 2220
+      },
+      "description": "Personal Star Map empty state; no entries or identity."
+    },
+    {
+      "name": "safety",
+      "source": "artifacts/release_qa/20260910_pinned_smoke/site-screens/safety.png",
+      "crop": {
+        "left": 0,
+        "top": 120,
+        "width": 1080,
+        "height": 2220
+      },
+      "description": "Pinned 1.4.0+7 Release; local Safety Center interface. No identities."
+    },
+    {
+      "name": "privacy-guard",
+      "source": "artifacts/release_qa/20260910_pinned_smoke/site-screens/privacy-guard.png",
+      "crop": {
+        "left": 0,
+        "top": 120,
+        "width": 1080,
+        "height": 2220
+      },
+      "description": "Pinned 1.4.0+7 Release; local Privacy Guard interface. No identities."
+    }
+  ]
+}

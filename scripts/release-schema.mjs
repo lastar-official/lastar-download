@@ -1,0 +1,8 @@
+import assert from 'node:assert/strict';
+export function validateRelease(m){
+ assert.ok(['active','paused','maintenance'].includes(m.service_status),'A real Beta service status is required');
+ for(const k of ['channel','version','version_code','tag','release_name','published_at','apk_filename','apk_asset','stable_asset','direct_download_url','size_bytes','size_display','sha256','application_id','minimum_android','public_verified','latest_verified'])assert.ok(Object.hasOwn(m,k),`Missing release field ${k}`);
+ assert.equal(m.channel,'Beta');assert.match(m.version,/^\d+\.\d+\.\d+$/);assert.ok(Number.isInteger(m.version_code)&&m.version_code>0);assert.equal(m.application_id,'com.lastar.social');assert.match(m.sha256,/^[a-f0-9]{64}$/);assert.ok(Number.isSafeInteger(m.size_bytes)&&m.size_bytes>1000000);assert.equal(m.apk_asset,m.apk_filename);assert.equal(m.stable_asset,'LaStar-Beta.apk');assert.match(m.apk_filename,/^LaStar-Beta-v\d+\.\d+\.\d+\.apk$/);assert.match(m.tag,/^v\d+\.\d+\.\d+-beta\.\d+$/);
+ assert.equal(m.direct_download_url,`https://github.com/lastar-official/lastar-download/releases/download/${m.tag}/${m.apk_asset}`);assert.equal(m.stable_download_url,'https://github.com/lastar-official/lastar-download/releases/latest/download/LaStar-Beta.apk');assert.equal(m.release_url,`https://github.com/lastar-official/lastar-download/releases/tag/${m.tag}`);
+ assert.equal(typeof m.public_verified,'boolean');assert.equal(typeof m.latest_verified,'boolean');if(m.latest_verified)assert.ok(m.public_verified);if(m.public_verified)assert.ok(typeof m.published_at==='string'&&Number.isFinite(Date.parse(m.published_at)),'Verified release needs a real published_at');
+}

@@ -1,0 +1,10 @@
+import { chromium } from 'playwright';
+import { mkdir,readFile } from 'node:fs/promises';
+import sharp from 'sharp';
+import QRCode from 'qrcode';
+await mkdir('assets',{recursive:true});
+await sharp('app-icon.png').resize(180,180).png().toFile('assets/apple-touch-icon.png');
+await sharp('app-icon.png').resize(160,160).webp({quality:90}).toFile('assets/app-icon.webp');
+await QRCode.toFile('assets/download-qr.png','https://lastar.me/download',{width:300,margin:2,errorCorrectionLevel:'M',color:{dark:'#080b14',light:'#ffffff'}});
+const mark=await readFile('assets/brand-mark.svg','utf8');
+const browser=await chromium.launch(process.argv.includes('--edge')?{channel:'msedge'}:{});const page=await browser.newPage({viewport:{width:1200,height:630},deviceScaleFactor:1});await page.setContent(`<html lang="zh-CN"><meta charset="utf-8"><style>*{box-sizing:border-box}body{margin:0;background:#080b14;color:#f7f6ff;font-family:"Microsoft YaHei","PingFang SC",sans-serif;width:1200px;height:630px;padding:62px 76px;position:relative;overflow:hidden}header{display:flex;align-items:center;gap:16px;font-size:36px}svg{width:68px;height:68px}h1{font-size:60px;line-height:1.4;letter-spacing:-2px;font-weight:500;margin:45px 0 0}h1 span{color:#c6b9ef}p{font-size:21px;color:#b2b7ca;letter-spacing:3px}.planet{position:absolute;width:260px;height:260px;border-radius:50%;right:55px;top:220px;background:radial-gradient(ellipse at 30% 22%,#c6b8e8,#645782 34%,#241e36 66%,#0c0d17 85%)}.orbit{position:absolute;right:-40px;top:255px;width:440px;height:180px;border:1px solid #80719b70;border-radius:50%;transform:rotate(-32deg)}footer{position:absolute;bottom:45px;font-size:17px;color:#c3bfd2;letter-spacing:2px}</style><body><header>${mark}<b>LaStar</b></header><h1>先好好生活，<br><span>再遇见同频的人。</span></h1><p>女性同频社区 · 18+ · 邀请制 Beta</p><div class="planet"></div><div class="orbit"></div><footer>lastar.me</footer></body></html>`);await page.screenshot({path:'assets/og-lastar.png'});await browser.close();console.log('Generated 1200x630 HTML-rendered OG, same-origin download QR and touch icon.');

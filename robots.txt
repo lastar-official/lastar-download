@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /qa-artifacts/
+Disallow: /content/
+Disallow: /scripts/
+Sitemap: https://lastar.me/sitemap.xml
