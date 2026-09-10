@@ -2,123 +2,34 @@ name: Assemble Android release assets
 
 on:
   workflow_dispatch:
-    inputs:
-      tag:
-        description: Existing GitHub Release tag
-        required: true
-        type: string
-      version:
-        description: Public semantic version without v prefix
-        required: true
-        type: string
-      expected_sha256:
-        description: Lowercase SHA-256 of the complete APK
-        required: true
-        type: string
-      chunk_prefix:
-        description: Exact release-asset prefix used for numbered parts
-        required: true
-        type: string
-      expected_chunks:
-        description: Exact number of numbered parts
-        required: true
-        type: string
 
 permissions:
-  contents: write
+  contents: read
 
 concurrency:
-  group: android-release-${{ inputs.tag }}
+  group: lastar-rc1-v1.4.0-beta.1
   cancel-in-progress: false
 
 jobs:
-  assemble:
+  release:
+    if: github.repository == 'lastar-official/lastar-download' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
-    env:
-      GH_TOKEN: ${{ github.token }}
-      RELEASE_TAG: ${{ inputs.tag }}
-      RELEASE_VERSION: ${{ inputs.version }}
-      EXPECTED_SHA256: ${{ inputs.expected_sha256 }}
-      CHUNK_PREFIX: ${{ inputs.chunk_prefix }}
-      EXPECTED_CHUNKS: ${{ inputs.expected_chunks }}
+    timeout-minutes: 20
+    permissions:
+      contents: write
     steps:
-      - name: Validate dispatch inputs
+      - name: Read the exact dispatched source revision
+        env:
+          SOURCE_REVISION: ${{ github.sha }}
         shell: bash
         run: |
           set -euo pipefail
-          [[ "$RELEASE_TAG" =~ ^v[0-9]+\.[0-9]+\.[0-9]+-beta\.[0-9]+$ ]]
-          [[ "$RELEASE_VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]
-          [[ "$EXPECTED_SHA256" =~ ^[0-9a-f]{64}$ ]]
-          [[ "$CHUNK_PREFIX" =~ ^LaStar-Beta-v[0-9]+\.[0-9]+\.[0-9]+\.apk\.part-$ ]]
-          [[ "$EXPECTED_CHUNKS" =~ ^[1-9][0-9]*$ ]]
-          gh release view "$RELEASE_TAG" --repo "$GITHUB_REPOSITORY" >/dev/null
-
-      - name: Download and assemble numbered parts
-        shell: bash
-        run: |
-          set -euo pipefail
-          mkdir -p incoming output
-          gh release download "$RELEASE_TAG" \
-            --repo "$GITHUB_REPOSITORY" \
-            --pattern "${CHUNK_PREFIX}*" \
-            --dir incoming
-
-          mapfile -t parts < <(find incoming -maxdepth 1 -type f \
-            -name "${CHUNK_PREFIX}*" -printf '%f\n' | LC_ALL=C sort)
-          [[ "${#parts[@]}" -eq "$EXPECTED_CHUNKS" ]]
-
-          for index in "${!parts[@]}"; do
-            expected=$(printf '%s%03d' "$CHUNK_PREFIX" "$index")
-            [[ "${parts[$index]}" == "$expected" ]]
-            cat "incoming/${parts[$index]}" >> output/LaStar-Beta.apk
-          done
-
-          actual=$(sha256sum output/LaStar-Beta.apk | awk '{print $1}')
-          [[ "$actual" == "$EXPECTED_SHA256" ]]
-
-      - name: Publish immutable, stable, and RC1-compatible assets
-        shell: bash
-        run: |
-          set -euo pipefail
-          immutable="LaStar-Beta-v${RELEASE_VERSION}.apk"
-          legacy="LaStar-Beta-RC1-v${RELEASE_VERSION}.apk"
-          cp output/LaStar-Beta.apk "output/$immutable"
-          cp output/LaStar-Beta.apk "output/$legacy"
-
-          printf '%s  %s\n' "$EXPECTED_SHA256" "$immutable" > "output/${immutable}.sha256"
-          printf '%s  %s\n' "$EXPECTED_SHA256" 'LaStar-Beta.apk' > output/LaStar-Beta.apk.sha256
-          printf '%s  %s\n' "$EXPECTED_SHA256" "$legacy" > "output/${legacy}.sha256"
-
-          gh release upload "$RELEASE_TAG" --repo "$GITHUB_REPOSITORY" --clobber \
-            "output/$immutable" \
-            output/LaStar-Beta.apk \
-            "output/$legacy" \
-            "output/${immutable}.sha256" \
-            output/LaStar-Beta.apk.sha256 \
-            "output/${legacy}.sha256"
-
-      - name: Verify public release metadata before removing parts
-        shell: bash
-        run: |
-          set -euo pipefail
-          expected_size=$(stat -c '%s' output/LaStar-Beta.apk)
-          for asset in \
-            "LaStar-Beta-v${RELEASE_VERSION}.apk" \
-            'LaStar-Beta.apk' \
-            "LaStar-Beta-RC1-v${RELEASE_VERSION}.apk"; do
-            actual_size=$(gh release view "$RELEASE_TAG" \
-              --repo "$GITHUB_REPOSITORY" \
-              --json assets \
-              --jq ".assets[] | select(.name == \"$asset\") | .size")
-            [[ "$actual_size" == "$expected_size" ]]
-          done
-
-      - name: Remove transport-only parts
-        shell: bash
-        run: |
-          set -euo pipefail
-          for index in $(seq 0 $((EXPECTED_CHUNKS - 1))); do
-            asset=$(printf '%s%03d' "$CHUNK_PREFIX" "$index")
-            gh release delete-asset "$RELEASE_TAG" "$asset" \
-              --repo "$GITHUB_REPOSITORY" --yes
-          done
+          [[ "$SOURCE_REVISION" =~ ^[0-9a-f]{40}$ ]]
+          git init source
+          git -C source remote add origin https://github.com/lastar-official/lastar-download.git
+          git -C source fetch --depth=1 origin "$SOURCE_REVISION"
+          git -C source checkout --detach FETCH_HEAD
+      - name: Verify, assemble, publish, publicly verify, and clean RC1 transport
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 source/scripts/assemble_rc1.py
