@@ -1,5 +1,5 @@
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
-import { pages, legalDate, serviceReadinessNotice, legalSupplementNotice, pushCompatibilityNotice } from '../content/pages.mjs';
+import { pages, legalDate, serviceReadinessNotice, legalSupplementNotice, pushCompatibilityNotice, ownerAndSupportNotice } from '../content/pages.mjs';
 import { validateRelease } from './release-schema.mjs';
 const meta = JSON.parse(await readFile(new URL('../release-meta.json', import.meta.url), 'utf8'));
 validateRelease(meta);
@@ -8,13 +8,20 @@ const nav = `<a class="skip" href="#main">跳至正文</a><header class="topbar 
 const footer = `<footer class="footer"><div class="wrap"><div class="footer-top"><div><a class="brand" href="/"><img src="/assets/brand-mark.svg" width="42" height="42" alt=""><span>LaStar</span></a><p>先好好生活，再遇见同频的人。</p></div><nav class="footer-links" aria-label="页脚导航"><a href="/download">下载 Beta</a><a href="/privacy">隐私政策</a><a href="/terms">服务条款</a><a href="/community-guidelines">社区准则</a><a href="/safety">安全中心</a><a href="/delete-account">删除账号</a><a href="/changelog">更新记录</a><a href="/#wechat">官方公众号</a></nav></div><div class="footer-bottom"><span>© 2026 LaStar · 面向成年女性的邀请制社区</span><span>18+ · 你有自己的节奏。</span></div></div></footer>`;
 function document({title,description,path,body,noindex=false}) {
  const url='https://lastar.me'+path;
+ body=body.replace('</main>',ownerAndSupportNotice+'</main>');
+ // Factual closed-test scope only; this does not transition service_status to active.
+ body=body.replaceAll('邀请码由 LaStar 官方渠道逐步发放。','第一阶段由所有者逐个手工邀请最多 10 名已知成年测试者，尚未开放领取。')
+  .replaceAll('关注「LaStar 拉星」，了解内测招募和版本消息。','公众号仅保留品牌与版本说明；第一阶段不公开招募，也不自动发放邀请码。')
+  .replaceAll('请关注「LaStar 拉星」的招募信息。','请等待所有者直接通知；不通过公众号公开招募或自动领码。')
+  .replace('请先确认你已获得邀请码，<br>然后从这里开始。','目前尚未开测，请等待所有者明确通知，<br>不要提前注册。');
  if(meta.service_status!=='active') {
   if(path==='/download')body=body.replace('<div class="download-layout">',serviceReadinessNotice+'<div class="download-layout">');
   if(path==='/')body=body.replace('<main id="main"><div class="wrap">','<main id="main"><div class="wrap">'+serviceReadinessNotice)
    .replace('LaStar 正在邀请制 Beta 中。','LaStar 处于邀请制 Beta 的服务恢复验收阶段。')
    .replace('当前开放 Android Beta。','当前提供 Android Beta 安装包，服务恢复验收尚未完成。');
  }
- if(path==='/download')body=body.replace('<section class="install"><h2>几步之后，见。</h2>','<section class="install"><h2>几步之后，见。</h2><div class="note"><strong>先确认通知兼容性。</strong>'+pushCompatibilityNotice+'</div>');
+ if(path==='/download')body=body.replace('<section class="install"><h2>几步之后，见。</h2>','<section class="install"><h2>几步之后，见。</h2><div class="note"><strong>先确认通知兼容性。</strong>'+pushCompatibilityNotice+'</div>')
+  .replace('<div class="checksum"><span>SHA-256 · 安装包校验值</span>','<p class="micro" data-checksum-correction>Release 的独立 .sha256 附件已更正并与此安装包一致；APK、正式签名与版本未替换。安装包校验不代表服务端修复或开测验收已完成。</p><div class="checksum"><span>SHA-256 · 安装包校验值</span>');
  if(['/privacy','/terms','/community-guidelines'].includes(path))body=body.replace('<div class="article-layout">',legalSupplementNotice+'<div class="article-layout">');
  return `<!doctype html>\n<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>${esc(title)}</title><meta name="description" content="${esc(description)}"><link rel="canonical" href="${url}"><meta name="theme-color" content="#080b14"><meta property="og:type" content="website"><meta property="og:locale" content="zh_CN"><meta property="og:site_name" content="LaStar"><meta property="og:title" content="${esc(title)}"><meta property="og:description" content="${esc(description)}"><meta property="og:url" content="${url}"><meta property="og:image" content="https://lastar.me/assets/og-lastar.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="LaStar，先好好生活，再遇见同频的人。"><meta name="twitter:card" content="summary_large_image"><link rel="icon" href="/assets/brand-mark.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/assets/apple-touch-icon.png"><link rel="stylesheet" href="/site.css"><script src="/site.js" defer></script>${noindex?'<meta name="robots" content="noindex">':''}</head><body>${nav}${body}${footer}</body></html>\n`;
 }

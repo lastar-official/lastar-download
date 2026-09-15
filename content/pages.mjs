@@ -1,5 +1,6 @@
-export const legalDate = '2026 年 9 月 10 日';
-export const serviceReadinessNotice = '<div class="note" role="status" data-service-status="paused"><strong>Beta 服务恢复验收尚未完成。</strong>安装包仍可下载，但下载验证通过不代表注册、登录与在线功能已通过恢复验收。请等待官方验收完成通知后再注册。</div>';
+export const legalDate = '2026 年 9 月 15 日';
+export const ownerAndSupportNotice = '<section class="note" data-owner-support><h2>运营者与支持状态</h2><p>LaStar 由个人运营，尚未注册公司，实际运营地为中国大陆；具体城市尚未补充。APP 备案尚未办理，适用性尚未闭合，不宣称已获得公开发布合规认证。</p><p>第一阶段仅计划开展免费封闭技术内测，最多 10 名由所有者能够直接联系和管理的已知成年测试者，人工逐个发放邀请码。当前仍为 NO-GO，不公开招募，不启用公众号自动发码，也不以人数少、邀请制或境外服务器主张法律豁免。</p><p>品牌联系邮箱 hello@lastar.me 的收件、所有者回复与用户再次回信验收尚未完成，暂不列为已验证可用渠道。处理人为所有者本人，承诺回复时间为 48 小时内；不声称已具备官方域名回信能力。开测前必须完成支持闭环；已知测试者目前请直接联系所有者。</p></section>';
+export const serviceReadinessNotice = '<div class="note" role="status" data-service-status="paused"><strong>Beta 服务恢复验收尚未完成。</strong>当前仍为 NO-GO，暂不开测、不公开招募。第一阶段仅计划在中国大陆向最多 10 名所有者能够直接联系和管理的已知成年测试者进行免费封闭技术内测，完成适用门槛后由所有者逐个手工发放邀请码。公众号不自动发码，也不接受陌生用户招募。安装包下载验证通过不代表在线功能或开测验收通过；请等待所有者明确通知后再注册。这不是公开发布合规认证，也不以人数少或邀请制主张法律豁免。</div>';
 export const legalSupplementNotice = '<div class="note" data-legal-supplement><strong>关于本页与 App 内协议。</strong>本页补充说明现有 Beta 的行为。当前 Android 1.4.0（Build 7）App 内置协议版本为 2026-08-26，App 法律入口不会自动加载本网页。网页更新不代表你已重新同意，也不能替代实际需要的单独告知与同意流程。</div>';
 export const pushCompatibilityNotice = '<p data-push-compatibility>当前远程通知依赖 Firebase Cloud Messaging（FCM）和设备上的 Google Play services（GMS）。没有 GMS，或相关服务在当前网络不可用时，不能依赖远程通知送达。你可以在网络可用时打开 App 查看内容；这不等于离线推送可用。不要把推送作为紧急提醒的唯一方式。</p>';
 export const pages = [
