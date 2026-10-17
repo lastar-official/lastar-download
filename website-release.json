@@ -1,0 +1,339 @@
+{
+  "domain": "lastar.me",
+  "sourceCommit": "aa8f94f3df73e7ec626b8a525cb57ba8ace49090",
+  "rollbackCommit": "4cbc5b12e5a8501048636249895f6c3a530aa715",
+  "appPublic": false,
+  "adminPublic": false,
+  "trendsPublic": false,
+  "databaseModified": false,
+  "supportConfirmation": "owner-attested-roundtrip-2026-10-17",
+  "routes": [
+    "/",
+    "/features/",
+    "/about/",
+    "/community/",
+    "/nearby/",
+    "/circles/",
+    "/relationships/",
+    "/messaging/",
+    "/planet/",
+    "/trends/",
+    "/trust/",
+    "/safety/",
+    "/download/",
+    "/status/",
+    "/faq/",
+    "/contact/",
+    "/support/",
+    "/privacy/",
+    "/terms/",
+    "/guidelines/",
+    "/community-guidelines/",
+    "/account-deletion/",
+    "/delete-account/",
+    "/changelog/"
+  ],
+  "files": [
+    {
+      "path": "_next/static/chunks/1k_nh6nwi2sy0.css",
+      "size": 9726,
+      "sha256": "81c9ee26f07b4d6b65d57bb9fc1a6850d40eb23101c55a2b8ef6c536fc3314cf"
+    },
+    {
+      "path": "_next/static/chunks/3z8camntvor0-.css",
+      "size": 9184,
+      "sha256": "2c7ea576751470167c80ce0494671482842f0df35cc8ad5226bd9e7cad4ad397"
+    },
+    {
+      "path": "_next/static/media/favicon.19cfo8706489h.ico",
+      "size": 2643,
+      "sha256": "4e8f49c38a0ed45a21e70b0737abb13fde881ebdde1d69b8f0cccd297237c4a8"
+    },
+    {
+      "path": "_next/static/media/icon.1o70cnytfo497.png",
+      "size": 2107,
+      "sha256": "db77a31144d08021612ae60c60ea2316b8805c2feba0637277467424458b37e7"
+    },
+    {
+      "path": "_not-found/index.html",
+      "size": 5029,
+      "sha256": "5cbea71fc5abde95748091d158e922a66a34f83b8ca3ec3b952948f7c886d5af"
+    },
+    {
+      "path": ".nojekyll",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "404.html",
+      "size": 5029,
+      "sha256": "5cbea71fc5abde95748091d158e922a66a34f83b8ca3ec3b952948f7c886d5af"
+    },
+    {
+      "path": "404/index.html",
+      "size": 5029,
+      "sha256": "5cbea71fc5abde95748091d158e922a66a34f83b8ca3ec3b952948f7c886d5af"
+    },
+    {
+      "path": "about/index.html",
+      "size": 6307,
+      "sha256": "936c8a9e764aa93b9f858b7adac42f549d41d84a7ca798530b38ff09baa0a548"
+    },
+    {
+      "path": "account-deletion/index.html",
+      "size": 6339,
+      "sha256": "983434e1cbcebfdbdcc9412ed728b1c82c0b66b4e84b47230cb404414301c120"
+    },
+    {
+      "path": "changelog/index.html",
+      "size": 5992,
+      "sha256": "3423c3eb046e06e7b06bd4d7751741e23ef56fe34b76fa2a1a6b53c0a388309a"
+    },
+    {
+      "path": "circles/index.html",
+      "size": 5939,
+      "sha256": "a22ed494647bd3694f8b368ede70fa21496a9772e27ba7faa2128030ab68fa8f"
+    },
+    {
+      "path": "CNAME",
+      "size": 9,
+      "sha256": "f8ead6ba6203eb0d123a661d2fe0adaf576517de5209740fbec157fc06fba2df"
+    },
+    {
+      "path": "community-guidelines.html",
+      "size": 1003,
+      "sha256": "e68d6dba53ac35a57620a4b23deaf0af9f64f92322b39d3471c812970441c665"
+    },
+    {
+      "path": "community-guidelines/index.html",
+      "size": 5696,
+      "sha256": "285206b83fa365fd9e779892f3865f51d6f1c9ac82e92a8f02d39f6544e52cb4"
+    },
+    {
+      "path": "community/index.html",
+      "size": 6161,
+      "sha256": "13ac7680b9068b8b6b11b925e47a02d3d55bd266a59e03b28979a736383ab9cb"
+    },
+    {
+      "path": "contact/index.html",
+      "size": 6251,
+      "sha256": "0704dfd85467d7708c2b6a500e06a39fcaa3a9a8a1e8bd424df6085d5040e619"
+    },
+    {
+      "path": "delete-account/index.html",
+      "size": 6033,
+      "sha256": "29a7f5cd6191d9b3cc81716412b918f8ac1ab79b74cf851834a41c4879b5af3c"
+    },
+    {
+      "path": "download/index.html",
+      "size": 6063,
+      "sha256": "1d5df5f8b83629b652e8030a44a0255b5aa7009d3b542fd2585b699fff8274b1"
+    },
+    {
+      "path": "faq/index.html",
+      "size": 6881,
+      "sha256": "d417bc41e28f49c748d6d7705b37a06e2dda9de3db9d7aba6818decb9250abaf"
+    },
+    {
+      "path": "favicon.ico",
+      "size": 2643,
+      "sha256": "4e8f49c38a0ed45a21e70b0737abb13fde881ebdde1d69b8f0cccd297237c4a8"
+    },
+    {
+      "path": "features/index.html",
+      "size": 6579,
+      "sha256": "599ed710eda2d34a6406a962fef895bdf6876a272576c7cd81493a31687be2d4"
+    },
+    {
+      "path": "guidelines/index.html",
+      "size": 5852,
+      "sha256": "674637aa17419b5c5da69e095b34deed96d1d6946b78094d49679c51022d6194"
+    },
+    {
+      "path": "icon.png",
+      "size": 2107,
+      "sha256": "db77a31144d08021612ae60c60ea2316b8805c2feba0637277467424458b37e7"
+    },
+    {
+      "path": "index.html",
+      "size": 9697,
+      "sha256": "40b392be9ba40d920bb9178084492bd7f34e5741d07fcab40e9a7b9aee4f11db"
+    },
+    {
+      "path": "lastar-mark.svg",
+      "size": 647,
+      "sha256": "c31b3afc058ae5fc014948bdcd0e4765ebab96ce9c58e57be296d93efb2400fe"
+    },
+    {
+      "path": "lastar-ui.a4039b87ed6c.js",
+      "size": 5463,
+      "sha256": "a4039b87ed6c39c79a740238c451a6c40517c4c25b68c982db80a805c571eecc"
+    },
+    {
+      "path": "legacy-beta/assets/app-icon.webp",
+      "size": 2820,
+      "sha256": "3c1bed298d267d10399c8bda283db72ef375a77349d4fa64e968d055a1755553"
+    },
+    {
+      "path": "legacy-beta/assets/apple-touch-icon.png",
+      "size": 23447,
+      "sha256": "87f4b24974f42108805a723dffac3d35108822252acd1f8d360a8f105610ec16"
+    },
+    {
+      "path": "legacy-beta/assets/brand-mark.svg",
+      "size": 452,
+      "sha256": "d764fec5aaa82a5ecb35c3d39a6c64b1f91fe39816237751b73def5e31555dd9"
+    },
+    {
+      "path": "legacy-beta/assets/download-qr.png",
+      "size": 1927,
+      "sha256": "42781215ade19d23626c56ee44e0e3c22eaafc291b5828ff7ab7e4de39b33347"
+    },
+    {
+      "path": "legacy-beta/assets/og-lastar.png",
+      "size": 75676,
+      "sha256": "3d5b0db09d99b38830d974ef728db1e0b79d9bbf5ac0ce07d2ecb7d7e7496b7f"
+    },
+    {
+      "path": "legacy-beta/assets/screenshots/activities.webp",
+      "size": 32020,
+      "sha256": "ac2db434197995da1df53846d8a39cb798f8b3b938c06b6600e75b8c1bf80f89"
+    },
+    {
+      "path": "legacy-beta/assets/screenshots/living-universe.webp",
+      "size": 39298,
+      "sha256": "6111c78ec8f9daa8dea77eb50495a8527de84b0c24f547e3a48bf55b674d3992"
+    },
+    {
+      "path": "legacy-beta/assets/screenshots/privacy-guard.webp",
+      "size": 43654,
+      "sha256": "f17e82ac9b14e4a2b4ec4c52017bb947c9f3979a54286cbd5ad591499f893463"
+    },
+    {
+      "path": "legacy-beta/assets/screenshots/safety.webp",
+      "size": 37206,
+      "sha256": "4e30480e6171473bd27519cfea4bc597f05532f035f64ff97ebe40a497b130ce"
+    },
+    {
+      "path": "legacy-beta/assets/screenshots/star-map.webp",
+      "size": 24266,
+      "sha256": "79a03d4ae70a08e8313f056c6ad07648d8598ccca6c1edcbdfe51b47bc39f749"
+    },
+    {
+      "path": "legacy-beta/assets/screenshots/universe.webp",
+      "size": 23562,
+      "sha256": "49f37a756698a9c47c5ec89f9e2db48b0f8791b1a43e22194b04af9ddf40a08d"
+    },
+    {
+      "path": "legacy-beta/community-guidelines.html",
+      "size": 7034,
+      "sha256": "ade490ca9c39a98367fa7fe86314c24a5588996838fb21a98bd22f852eb1c44b"
+    },
+    {
+      "path": "legacy-beta/legal.css",
+      "size": 633,
+      "sha256": "ca9b1522a88fa5a6f7c8dee0a247bc3ccff8f8c3e185c1e1f326ec1b358200cc"
+    },
+    {
+      "path": "legacy-beta/privacy.html",
+      "size": 10697,
+      "sha256": "d4178fa21cc42ee1b14e5d3708101f40ddae59ffdd40950884833f0f8b0b611a"
+    },
+    {
+      "path": "legacy-beta/site.css",
+      "size": 18028,
+      "sha256": "d0051a8487449da6255a7f268c8be2270c3a92ed7fdc72f894c2791b6470f3d3"
+    },
+    {
+      "path": "legacy-beta/site.js",
+      "size": 786,
+      "sha256": "f42dba4f1acade249986798fdf071ecda3a0cfc9da9c601b191a08a37b00d4be"
+    },
+    {
+      "path": "legacy-beta/terms.html",
+      "size": 7937,
+      "sha256": "f5ceaf797c49e4a0c132d0d411ead20d769d00386505794abda508df4995b697"
+    },
+    {
+      "path": "messaging/index.html",
+      "size": 5882,
+      "sha256": "03eb59e017bf9c245fe2c8549d56ccaede305ce92558a353cbcb2964ef1a49f4"
+    },
+    {
+      "path": "nearby/index.html",
+      "size": 5982,
+      "sha256": "8e452af6b25ed4272706ddb29f8b4fdb5bfe37276af166f21de830654f056ae2"
+    },
+    {
+      "path": "og-lastar.png",
+      "size": 85047,
+      "sha256": "c8a44133d1f2de2875cdc4302f7ae7b7a92824214340324f14ff2f0b030ceb07"
+    },
+    {
+      "path": "planet/index.html",
+      "size": 5808,
+      "sha256": "ab7c1f1c54282d03a06d275bc23d909ce62710737b80b59b1cc61388a8682135"
+    },
+    {
+      "path": "privacy.html",
+      "size": 984,
+      "sha256": "ebd75e2569532eff35fd4b7551013f538f055b8bd0999557cdff16e4374f5d14"
+    },
+    {
+      "path": "privacy/index.html",
+      "size": 7160,
+      "sha256": "a8b2a916d26cc2f65129d643cfbbc5f1a2eba6a429416b8cb5ac1d730de52f82"
+    },
+    {
+      "path": "relationships/index.html",
+      "size": 6352,
+      "sha256": "001bb4912da82de53338c3a9711478fb49848f207ccfed2ab3ab5df4ffdd7063"
+    },
+    {
+      "path": "robots.txt",
+      "size": 87,
+      "sha256": "8c02fd19003906599ba7198668d1ad05eb440ca08d625295294e153a09926944"
+    },
+    {
+      "path": "safety/index.html",
+      "size": 6077,
+      "sha256": "441013f28ce34dfda87b84b2f3179eb50e395b240fd3bc2848f2bb9a6a6e62a1"
+    },
+    {
+      "path": "sitemap.xml",
+      "size": 3467,
+      "sha256": "f7fa1272c8f0c48591ce4e6d67c97793474e993497a7b974a980db078f8e3111"
+    },
+    {
+      "path": "status/index.html",
+      "size": 6253,
+      "sha256": "f79a9a4582361ae837266b2335e000f2f5d2c902b6a64ca4d68503796e237a71"
+    },
+    {
+      "path": "support/index.html",
+      "size": 6504,
+      "sha256": "e5d995defce23301ed1a5c81f961a5b18ab5e366f482c4a1f6fe968d9f64b114"
+    },
+    {
+      "path": "terms.html",
+      "size": 978,
+      "sha256": "21a21227f4f15dfb319845b2d0146b647333ae6dbbd15f5bb92005caefd0a7e1"
+    },
+    {
+      "path": "terms/index.html",
+      "size": 6599,
+      "sha256": "7204627ce13750ac676ad35a283eeae464bd67480d68ae34d2629784a3410c43"
+    },
+    {
+      "path": "trends/index.html",
+      "size": 5982,
+      "sha256": "afc6f7401ee10455f1b57ddfec50a6961258d6975b5c91893a969ebf79086f27"
+    },
+    {
+      "path": "trust/index.html",
+      "size": 5786,
+      "sha256": "01ed963229835e2faed1a363807632c39cd31b8ac9ab9ac8f1fea07cf5582437"
+    }
+  ],
+  "delivery": "Next-compiled SSR HTML + first-party progressive enhancement; no App Router hydration"
+}
