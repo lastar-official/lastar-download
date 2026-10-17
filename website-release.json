@@ -1,12 +1,8 @@
 {
+  "version": "V4-W3",
   "domain": "lastar.me",
-  "sourceCommit": "aa8f94f3df73e7ec626b8a525cb57ba8ace49090",
-  "rollbackCommit": "4cbc5b12e5a8501048636249895f6c3a530aa715",
-  "appPublic": false,
-  "adminPublic": false,
-  "trendsPublic": false,
-  "databaseModified": false,
-  "supportConfirmation": "owner-attested-roundtrip-2026-10-17",
+  "sourceCommit": "1347c0beb75dc434c1f1acd6217bd06ee6371acb",
+  "rollbackCommit": "7a72936557bd019b59f1386392e0914d741941be",
   "routes": [
     "/",
     "/features/",
@@ -35,69 +31,39 @@
   ],
   "files": [
     {
-      "path": "_next/static/chunks/1k_nh6nwi2sy0.css",
-      "size": 9726,
-      "sha256": "81c9ee26f07b4d6b65d57bb9fc1a6850d40eb23101c55a2b8ef6c536fc3314cf"
-    },
-    {
-      "path": "_next/static/chunks/3z8camntvor0-.css",
-      "size": 9184,
-      "sha256": "2c7ea576751470167c80ce0494671482842f0df35cc8ad5226bd9e7cad4ad397"
-    },
-    {
-      "path": "_next/static/media/favicon.19cfo8706489h.ico",
-      "size": 2643,
-      "sha256": "4e8f49c38a0ed45a21e70b0737abb13fde881ebdde1d69b8f0cccd297237c4a8"
-    },
-    {
-      "path": "_next/static/media/icon.1o70cnytfo497.png",
-      "size": 2107,
-      "sha256": "db77a31144d08021612ae60c60ea2316b8805c2feba0637277467424458b37e7"
-    },
-    {
-      "path": "_not-found/index.html",
-      "size": 5029,
-      "sha256": "5cbea71fc5abde95748091d158e922a66a34f83b8ca3ec3b952948f7c886d5af"
-    },
-    {
       "path": ".nojekyll",
       "size": 0,
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
       "path": "404.html",
-      "size": 5029,
-      "sha256": "5cbea71fc5abde95748091d158e922a66a34f83b8ca3ec3b952948f7c886d5af"
-    },
-    {
-      "path": "404/index.html",
-      "size": 5029,
-      "sha256": "5cbea71fc5abde95748091d158e922a66a34f83b8ca3ec3b952948f7c886d5af"
-    },
-    {
-      "path": "about/index.html",
-      "size": 6307,
-      "sha256": "936c8a9e764aa93b9f858b7adac42f549d41d84a7ca798530b38ff09baa0a548"
-    },
-    {
-      "path": "account-deletion/index.html",
-      "size": 6339,
-      "sha256": "983434e1cbcebfdbdcc9412ed728b1c82c0b66b4e84b47230cb404414301c120"
-    },
-    {
-      "path": "changelog/index.html",
-      "size": 5992,
-      "sha256": "3423c3eb046e06e7b06bd4d7751741e23ef56fe34b76fa2a1a6b53c0a388309a"
-    },
-    {
-      "path": "circles/index.html",
-      "size": 5939,
-      "sha256": "a22ed494647bd3694f8b368ede70fa21496a9772e27ba7faa2128030ab68fa8f"
+      "size": 54593,
+      "sha256": "46deccbf3e9e8481b3250b4546e6690e8f86ebf5464a70378d098ff08bfbdb70"
     },
     {
       "path": "CNAME",
       "size": 9,
       "sha256": "f8ead6ba6203eb0d123a661d2fe0adaf576517de5209740fbec157fc06fba2df"
+    },
+    {
+      "path": "about/index.html",
+      "size": 61002,
+      "sha256": "8a13bd05c16095721a5e25f7fe3985b187c8f137e291c28af5aeb3ac41065bd7"
+    },
+    {
+      "path": "account-deletion/index.html",
+      "size": 56991,
+      "sha256": "0877e4edb32fc33a89b18c1d751db5c7156058f59a422f99b232ba853f74b5e5"
+    },
+    {
+      "path": "changelog/index.html",
+      "size": 56363,
+      "sha256": "d8ecb41dd062a9f4b36608887db348ff36285b49346fdd4598da3d33c892dd8a"
+    },
+    {
+      "path": "circles/index.html",
+      "size": 57178,
+      "sha256": "3cb4a168d5a607ace49c0370e542b19aa0eb5fa76f258fa772276ab7effd837c"
     },
     {
       "path": "community-guidelines.html",
@@ -106,33 +72,33 @@
     },
     {
       "path": "community-guidelines/index.html",
-      "size": 5696,
-      "sha256": "285206b83fa365fd9e779892f3865f51d6f1c9ac82e92a8f02d39f6544e52cb4"
+      "size": 56058,
+      "sha256": "e33030044548f0964c95b0c4502d1da1e91a33a012f45bdbe15731bd2d18ff13"
     },
     {
       "path": "community/index.html",
-      "size": 6161,
-      "sha256": "13ac7680b9068b8b6b11b925e47a02d3d55bd266a59e03b28979a736383ab9cb"
+      "size": 59740,
+      "sha256": "3cc733f4f52c6a696dafbd5fff8e58cd3dfb7c5e0d7de5dc127caab28df5c9cb"
     },
     {
       "path": "contact/index.html",
-      "size": 6251,
-      "sha256": "0704dfd85467d7708c2b6a500e06a39fcaa3a9a8a1e8bd424df6085d5040e619"
+      "size": 56482,
+      "sha256": "14e92d56670940745a6bd03416936655357400eb1350ef92506688527052ffb0"
     },
     {
       "path": "delete-account/index.html",
-      "size": 6033,
-      "sha256": "29a7f5cd6191d9b3cc81716412b918f8ac1ab79b74cf851834a41c4879b5af3c"
+      "size": 56541,
+      "sha256": "351c2079196c756118c2ffa3b3abbe7b484d670feb7142bcab1322a47c75cb7f"
     },
     {
       "path": "download/index.html",
-      "size": 6063,
-      "sha256": "1d5df5f8b83629b652e8030a44a0255b5aa7009d3b542fd2585b699fff8274b1"
+      "size": 56150,
+      "sha256": "114e52ae022d45fe2bf2eaa3aef237e5e56168360513ff3126ce8c39817decbd"
     },
     {
       "path": "faq/index.html",
-      "size": 6881,
-      "sha256": "d417bc41e28f49c748d6d7705b37a06e2dda9de3db9d7aba6818decb9250abaf"
+      "size": 56917,
+      "sha256": "e6c69be9c8c5859dbb0d6a87b72228d889fdb06e544283659dbc56941a0ef57e"
     },
     {
       "path": "favicon.ico",
@@ -141,13 +107,13 @@
     },
     {
       "path": "features/index.html",
-      "size": 6579,
-      "sha256": "599ed710eda2d34a6406a962fef895bdf6876a272576c7cd81493a31687be2d4"
+      "size": 56680,
+      "sha256": "82a3b9a6ec237af14c6510f9352885c7d6b36ff2894efad7d097cd2bb082a95d"
     },
     {
       "path": "guidelines/index.html",
-      "size": 5852,
-      "sha256": "674637aa17419b5c5da69e095b34deed96d1d6946b78094d49679c51022d6194"
+      "size": 56214,
+      "sha256": "8d22e0e70011a62c3a662955d0d1067945ae83319522a3ec156b624595090012"
     },
     {
       "path": "icon.png",
@@ -156,8 +122,8 @@
     },
     {
       "path": "index.html",
-      "size": 9697,
-      "sha256": "40b392be9ba40d920bb9178084492bd7f34e5741d07fcab40e9a7b9aee4f11db"
+      "size": 73385,
+      "sha256": "62e6afa8d9397b5b544627505a1a04ed98bc8c70f1e7da64fda7464db775d367"
     },
     {
       "path": "lastar-mark.svg",
@@ -165,9 +131,9 @@
       "sha256": "c31b3afc058ae5fc014948bdcd0e4765ebab96ce9c58e57be296d93efb2400fe"
     },
     {
-      "path": "lastar-ui.a4039b87ed6c.js",
-      "size": 5463,
-      "sha256": "a4039b87ed6c39c79a740238c451a6c40517c4c25b68c982db80a805c571eecc"
+      "path": "lastar-ui.c0c1dca8e6d6.js",
+      "size": 17301,
+      "sha256": "c0c1dca8e6d650cfc71ea04999e8d3d9fbf9e28574cc7bb7b4148ee33302def9"
     },
     {
       "path": "legacy-beta/assets/app-icon.webp",
@@ -256,23 +222,33 @@
     },
     {
       "path": "messaging/index.html",
-      "size": 5882,
-      "sha256": "03eb59e017bf9c245fe2c8549d56ccaede305ce92558a353cbcb2964ef1a49f4"
+      "size": 57565,
+      "sha256": "87f6f0d816e65866ed85fd34c2860cdabb793a38e115e127ff756675f0cf4ab6"
     },
     {
       "path": "nearby/index.html",
-      "size": 5982,
-      "sha256": "8e452af6b25ed4272706ddb29f8b4fdb5bfe37276af166f21de830654f056ae2"
+      "size": 58263,
+      "sha256": "b906a9701366a467be08fb4031cdeb570e270fb88a08fe304c2d700056baf29b"
     },
     {
       "path": "og-lastar.png",
-      "size": 85047,
-      "sha256": "c8a44133d1f2de2875cdc4302f7ae7b7a92824214340324f14ff2f0b030ceb07"
+      "size": 59358,
+      "sha256": "3cb0097f3be1abcd43dc1fd797fca84599e455573ba1ade777537c8fb44b9031"
+    },
+    {
+      "path": "og-lastar.svg",
+      "size": 918,
+      "sha256": "61234d22028b19081b8ebbd549e91dd4250562e529cbeb090a91a12a212c7c83"
+    },
+    {
+      "path": "orbit3d.be59915d7134.js",
+      "size": 51119,
+      "sha256": "be59915d7134cd3b3703979066cf428cf017fff66cd1eba3e9159a02c1d4352d"
     },
     {
       "path": "planet/index.html",
-      "size": 5808,
-      "sha256": "ab7c1f1c54282d03a06d275bc23d909ce62710737b80b59b1cc61388a8682135"
+      "size": 57393,
+      "sha256": "7cb0c4d83c38ff114b41aa54af30c380dd8a2aa5ec48641fbe9c28848ffaaa0f"
     },
     {
       "path": "privacy.html",
@@ -281,13 +257,13 @@
     },
     {
       "path": "privacy/index.html",
-      "size": 7160,
-      "sha256": "a8b2a916d26cc2f65129d643cfbbc5f1a2eba6a429416b8cb5ac1d730de52f82"
+      "size": 58438,
+      "sha256": "d5589aec4a8e4c10077b6ba43f00cf7f2d4f5444e5aa207201bf8172b5d8e9b6"
     },
     {
       "path": "relationships/index.html",
-      "size": 6352,
-      "sha256": "001bb4912da82de53338c3a9711478fb49848f207ccfed2ab3ab5df4ffdd7063"
+      "size": 59090,
+      "sha256": "112d265dd9b9bf3da5fb138b41c71ff2e9f1ce378d5dc0f74d547589e940ab5d"
     },
     {
       "path": "robots.txt",
@@ -296,8 +272,8 @@
     },
     {
       "path": "safety/index.html",
-      "size": 6077,
-      "sha256": "441013f28ce34dfda87b84b2f3179eb50e395b240fd3bc2848f2bb9a6a6e62a1"
+      "size": 56439,
+      "sha256": "f46f8f2d91d737aea5deaa23bc60b541ff1d1fcc4fa4d2ac11a791fc30e50270"
     },
     {
       "path": "sitemap.xml",
@@ -306,13 +282,13 @@
     },
     {
       "path": "status/index.html",
-      "size": 6253,
-      "sha256": "f79a9a4582361ae837266b2335e000f2f5d2c902b6a64ca4d68503796e237a71"
+      "size": 56330,
+      "sha256": "37b91e1021234ba95d663c7694980996d8523cb3a11f0f91e68e3e773b093b48"
     },
     {
       "path": "support/index.html",
-      "size": 6504,
-      "sha256": "e5d995defce23301ed1a5c81f961a5b18ab5e366f482c4a1f6fe968d9f64b114"
+      "size": 56820,
+      "sha256": "c09050f6cf0886c2bb51b16a987bb60043a90387229b66ce0641467ed8582a8e"
     },
     {
       "path": "terms.html",
@@ -321,19 +297,22 @@
     },
     {
       "path": "terms/index.html",
-      "size": 6599,
-      "sha256": "7204627ce13750ac676ad35a283eeae464bd67480d68ae34d2629784a3410c43"
+      "size": 57416,
+      "sha256": "5bd02acf2285d622331c7b4e113a1dcff69b426b7e593ef678c80accf65437fa"
     },
     {
       "path": "trends/index.html",
-      "size": 5982,
-      "sha256": "afc6f7401ee10455f1b57ddfec50a6961258d6975b5c91893a969ebf79086f27"
+      "size": 57054,
+      "sha256": "07a1640e49697c586c52d43cb8c87ba2f983199cd78d5b08c8bb11dd95a309f0"
     },
     {
       "path": "trust/index.html",
-      "size": 5786,
-      "sha256": "01ed963229835e2faed1a363807632c39cd31b8ac9ab9ac8f1fea07cf5582437"
+      "size": 56188,
+      "sha256": "e0aab933b5bce5325a0dd33ffc3628c4b4c0f3545b27b73a785156e299e4f064"
     }
   ],
-  "delivery": "Next-compiled SSR HTML + first-party progressive enhancement; no App Router hydration"
+  "appPublic": false,
+  "adminPublic": false,
+  "supportConfirmation": "owner-attested-roundtrip-2026-10-17",
+  "scope": "Static information website only; real WebGL enhancement, local illustrative interactions; no App or database release"
 }
