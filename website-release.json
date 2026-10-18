@@ -1,7 +1,7 @@
 {
   "domain": "lastar.me",
-  "sourceCommit": "3311036717abbd1751f12501efa0726373098950",
-  "rollbackCommit": "98fb84fe8bd4763f861a7074c85b840c7e220e99",
+  "sourceCommit": "aa8f94f3df73e7ec626b8a525cb57ba8ace49090",
+  "rollbackCommit": "4cbc5b12e5a8501048636249895f6c3a530aa715",
   "appPublic": false,
   "adminPublic": false,
   "trendsPublic": false,
@@ -156,8 +156,8 @@
     },
     {
       "path": "index.html",
-      "size": 17517,
-      "sha256": "3286d3314ff069f311b4c72d0c3a08b21c9e2aa43901e224de506cc3f0b1b5ce"
+      "size": 9697,
+      "sha256": "40b392be9ba40d920bb9178084492bd7f34e5741d07fcab40e9a7b9aee4f11db"
     },
     {
       "path": "lastar-mark.svg",
@@ -333,95 +333,7 @@
       "path": "trust/index.html",
       "size": 5786,
       "sha256": "01ed963229835e2faed1a363807632c39cd31b8ac9ab9ac8f1fea07cf5582437"
-    },
-    {
-      "path": "cinematic-r2.a5ed0e13c119.js",
-      "size": 65933,
-      "sha256": "a5ed0e13c1194cf823f9b9fc1c48f839251c2cc3f41e03dfdb2e58975821ccfa"
-    },
-    {
-      "path": "cinematic-r2.a440ca53d9cb.css",
-      "size": 2968,
-      "sha256": "a440ca53d9cbafc5caed941117b3db062e0bf35954da0a0f29526c616a2e8372"
-    },
-    {
-      "path": "assets/cinematic-r2/night-desktop-clean.webp",
-      "size": 279238,
-      "sha256": "c238d37a48f0c0d926090e569085efb2abf725dbe6deec05b7e3e9c747a0479b"
-    },
-    {
-      "path": "assets/cinematic-r2/dawn-desktop-clean.webp",
-      "size": 122736,
-      "sha256": "662e191376a326d25e72125b4c13009fa912f4f48ffcd89050b7d08924de019c"
-    },
-    {
-      "path": "assets/cinematic-r2/night-mobile-clean.webp",
-      "size": 179428,
-      "sha256": "0cab8458edf22a5e61eaa96131b995eae78844098c278f291182f504cb5f23b1"
-    },
-    {
-      "path": "assets/cinematic-r2/dawn-mobile-clean.webp",
-      "size": 108394,
-      "sha256": "04a47a4bd3a0d656e296bfaf29fac78ae5117162047d81886f93a7ab50cc9e01"
-    },
-    {
-      "path": "assets/cinematic-r2/night-desktop-static.webp",
-      "size": 159576,
-      "sha256": "691a2f9768b7e5441299a278e31f1474d05d2756a2882b1738995b845478a0e1"
-    },
-    {
-      "path": "assets/cinematic-r2/dawn-desktop-static.webp",
-      "size": 97314,
-      "sha256": "fa92d4a4907e3a47a9a9599808a7289092a341f5fadac9f490443c95a14223b4"
-    },
-    {
-      "path": "assets/cinematic-r2/night-mobile-static.webp",
-      "size": 140758,
-      "sha256": "89d158be1b05b50c51d2d0acb76a94ceb17170cbfbc13a0acb9c7375509ad88e"
-    },
-    {
-      "path": "assets/cinematic-r2/dawn-mobile-static.webp",
-      "size": 79810,
-      "sha256": "9d143a60c8917c5e61e12819a015a6a83fbf58389363d0d1ec021a5fcd54b09b"
-    },
-    {
-      "path": "assets/cinematic-r2/mint-matcap.webp",
-      "size": 8164,
-      "sha256": "a6e16edd39ee84f167b2dcbc516bbd5e544670d30b78f22185abe70da9833148"
-    },
-    {
-      "path": "assets/cinematic-r2/rose-matcap.webp",
-      "size": 11976,
-      "sha256": "5b18d2ffe6a57335a1c1a27fce95494e9f3452be4243c9f913cc846d0e46a933"
-    },
-    {
-      "path": "assets/cinematic-r2/cafe-poster.webp",
-      "size": 96258,
-      "sha256": "8e6f18b3cf44f782024681693495e11f31cb9967129b41e6434fe2357fa84d61"
-    },
-    {
-      "path": "assets/cinematic-r2/lastar-logo.svg",
-      "size": 647,
-      "sha256": "c31b3afc058ae5fc014948bdcd0e4765ebab96ce9c58e57be296d93efb2400fe"
-    },
-    {
-      "path": "assets/cinematic-r2/cafe-film.mp4",
-      "size": 1639351,
-      "sha256": "1d531ec672c418f1426d23bbb1f65704b884b70c78277026e82f83a480f6a19c"
-    },
-    {
-      "path": "assets/cinematic-r2/OGL-LICENSE.txt",
-      "size": 1211,
-      "sha256": "0bdebfeda07d45dada625ae1317c6f833186e798b171d0db640bcf32e92a8240"
     }
   ],
-  "delivery": "Next-compiled SSR HTML + first-party progressive enhancement; no App Router hydration",
-  "cinematic": {
-    "version": "Cinematic-R2",
-    "sourceCandidate": "f5ea1e34abd2a4b74724ed2f5d6c26015b04cefa",
-    "module": "cinematic-r2.a5ed0e13c119.js",
-    "css": "cinematic-r2.a440ca53d9cb.css",
-    "film": "assets/cinematic-r2/cafe-film.mp4",
-    "aiContext": true
-  }
+  "delivery": "Next-compiled SSR HTML + first-party progressive enhancement; no App Router hydration"
 }
