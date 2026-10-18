@@ -18,7 +18,11 @@ for(const file of manifest.files){
 for(const route of manifest.routes){
  const html=await readFile(join(root,route==='/'?'index.html':route.slice(1)+'index.html'),'utf8');
  if(!html.includes('<h1')||!html.includes('https://lastar.me'+route))throw Error('Page metadata gate failed: '+route);
- if(/<script[^>]*src="[^">]*\/_next\//i.test(html)||html.includes('self.__next_f.push')||!/<script defer src="\/lastar-ui\.[a-f0-9]+\.js"><\/script>/.test(html))throw Error('Information website must use lean first-party interactions: '+route);
+ if(/<script[^>]*src="[^">]*\/_next\//i.test(html)||html.includes('self.__next_f.push'))throw Error('Framework hydration prohibited: '+route);
+ if(route==='/'&&manifest.cinematic?.version==='Cinematic-R2'){
+  if(!html.includes('<script type="module" src="/'+manifest.cinematic.module+'"></script>')||!html.includes('id="community-film"')||!html.includes('AI 情境影像')||!html.includes('id="motion-toggle"')||!html.includes('https://lastar.me/'))throw Error('Cinematic root interaction/metadata gate failed');
+  const runtime=await readFile(join(root,manifest.cinematic.module),'utf8');if(/__lastarOrbit|diagnose\(/.test(runtime)||!runtime.includes('/assets/cinematic-r2/'))throw Error('Public runtime scope gate failed');
+ }else if(!/<script defer src="\/lastar-ui\.[a-f0-9]+\.js"><\/script>/.test(html))throw Error('Information website must use lean first-party interactions: '+route);
  if(/<form\b|href=["'][^"']*(?:\.apk|localhost|127\.0\.0\.1|\/admin\/)|noindex/i.test(html))throw Error('Public content gate failed: '+route);
  for(const tag of ['description','og:title','og:image','canonical'])if(!html.includes(tag))throw Error('Missing SEO '+tag+route);
 }
