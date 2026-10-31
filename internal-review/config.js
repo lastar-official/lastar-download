@@ -1,0 +1,1 @@
+window.LASTAR_REVIEW={"url":"https://xgogmqnlzknrdmknklnp.supabase.co","key":"sb_publishable_05xefOPWpeJvaUIDNjsXBg_uW2AJhsS","versionCode":4146,"versionName":"0.3.1","bytes":42169994,"sha256":"f9c7fa487d68f0b15b2260dc105d8777ecab7386911650c02961c53bb3644431","filename":"LaStar-4146-private-review-arm64.apk"};
