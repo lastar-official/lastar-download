@@ -31,7 +31,8 @@
     "/community-guidelines/",
     "/account-deletion/",
     "/delete-account/",
-    "/changelog/"
+    "/changelog/",
+    "/en/download/"
   ],
   "files": [
     {
@@ -126,8 +127,8 @@
     },
     {
       "path": "download/index.html",
-      "size": 6063,
-      "sha256": "1d5df5f8b83629b652e8030a44a0255b5aa7009d3b542fd2585b699fff8274b1"
+      "size": 42817,
+      "sha256": "f8c9eb4ffe6c00b80656e42b34a9d1087e7be22fe99f755fcb49f1ad811890dc"
     },
     {
       "path": "faq/index.html",
@@ -433,6 +434,46 @@
       "path": "assets/cinematic-faststart/OGL-LICENSE.txt",
       "size": 1211,
       "sha256": "0bdebfeda07d45dada625ae1317c6f833186e798b171d0db640bcf32e92a8240"
+    },
+    {
+      "path": "lastar-shared.b0bec734bf2f.css",
+      "size": 103221,
+      "sha256": "b0bec734bf2f9951a143baca391180fc31497590ac8210b27e0ac28181815215"
+    },
+    {
+      "path": "lastar-ui.0be6c6d026a6.js",
+      "size": 30961,
+      "sha256": "0be6c6d026a6e4557db7d9ad2034ca2f135858043144ade8a8bb337ffc0655a7"
+    },
+    {
+      "path": "download-beta.js",
+      "size": 928,
+      "sha256": "5b47a8c48fa1bdfeffc6bf5ef06216015381105554080b820bfab9f41d2580db"
+    },
+    {
+      "path": "en/download/index.html",
+      "size": 44848,
+      "sha256": "69852c62a8d39942d50949dcde782703854eb49c10febc09aee14a51540b4b9e"
+    },
+    {
+      "path": "app/privacy/index.html",
+      "size": 21742,
+      "sha256": "bf61dcac3c57d9a420a46a489cd224e028b62dc7a53349baacfd03a119959440"
+    },
+    {
+      "path": "app/terms/index.html",
+      "size": 21734,
+      "sha256": "950ecc000089c6f4b48c3aee4a5c77c34dd3a829348911c4001672bfc479a221"
+    },
+    {
+      "path": "en/app/privacy/index.html",
+      "size": 24006,
+      "sha256": "a166aa1dc80ad9c0460df4ff9a5d01e3cb59b29be2cfffe68585ccdabf337346"
+    },
+    {
+      "path": "en/app/terms/index.html",
+      "size": 23980,
+      "sha256": "5e3041494fc747916241808b15569c9052ec0a4cef328a8d82ee86a42ed605ef"
     }
   ],
   "delivery": "Next-compiled SSR HTML + first-party progressive enhancement; no App Router hydration",
@@ -443,5 +484,14 @@
     "film": "assets/cinematic-faststart/cafe-film.mp4",
     "source": "website/cinematic",
     "aiContext": true
+  },
+  "cnBetaDownload": {
+    "state": "preparing",
+    "apkPublic": false,
+    "mainlandCommunityEnabled": false,
+    "candidateBuild": 5005,
+    "candidateSha256": "a9f4f2835e01d8b0cc8e0d96b4d8ff0a73f0c5b53885af735480e8a716b967df",
+    "at": "2026-11-02T10:47:10.021Z",
+    "effectiveAppPolicies": false
   }
 }
