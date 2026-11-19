@@ -127,8 +127,8 @@
     },
     {
       "path": "download/index.html",
-      "size": 42817,
-      "sha256": "f8c9eb4ffe6c00b80656e42b34a9d1087e7be22fe99f755fcb49f1ad811890dc"
+      "size": 46920,
+      "sha256": "5f93f103646dc148a25bb84c6a850c3b3c9369eb51d18775209326366d9d7bd5"
     },
     {
       "path": "faq/index.html",
@@ -447,13 +447,13 @@
     },
     {
       "path": "download-beta.js",
-      "size": 928,
-      "sha256": "5b47a8c48fa1bdfeffc6bf5ef06216015381105554080b820bfab9f41d2580db"
+      "size": 929,
+      "sha256": "985a7cc9d7d9492f0603e61fb9aba99b5b9081ef33b30b616d18e8af6343fd1b"
     },
     {
       "path": "en/download/index.html",
-      "size": 44848,
-      "sha256": "69852c62a8d39942d50949dcde782703854eb49c10febc09aee14a51540b4b9e"
+      "size": 46712,
+      "sha256": "de66368d438915dfc251b3504e2bf64f3f93be8ecc0fe05a22a1f5dd9b584ec9"
     },
     {
       "path": "app/privacy/index.html",
@@ -474,6 +474,16 @@
       "path": "en/app/terms/index.html",
       "size": 23980,
       "sha256": "5e3041494fc747916241808b15569c9052ec0a4cef328a8d82ee86a42ed605ef"
+    },
+    {
+      "path": "lastar-shared.6a42737175ef.css",
+      "size": 106371,
+      "sha256": "6a42737175ef8e05bad47ce8a4dc9fe02e013bd2109bbd3e638598da24152047"
+    },
+    {
+      "path": "assets/download/soul-space-5023.webp",
+      "size": 207924,
+      "sha256": "426132facdeb8ffb6ff1530a354a35e2f464409f01f7dc72d6e25a187588facd"
     }
   ],
   "delivery": "Next-compiled SSR HTML + first-party progressive enhancement; no App Router hydration",
@@ -489,9 +499,16 @@
     "state": "preparing",
     "apkPublic": false,
     "mainlandCommunityEnabled": false,
-    "candidateBuild": 5005,
-    "candidateSha256": "a9f4f2835e01d8b0cc8e0d96b4d8ff0a73f0c5b53885af735480e8a716b967df",
-    "at": "2026-11-02T10:47:10.021Z",
+    "candidateBuild": 5023,
+    "candidateSha256": "0c95b33b64b4ca07b60dc4c1172d847de4c25b90bb82ba4c6b9d3f679b3f0343",
+    "at": "2026-11-19T15:01:25.313Z",
     "effectiveAppPolicies": false
+  },
+  "downloadPageUpgrade": {
+    "websiteSourceCommit": "1fd1c8db179f19dc9a62692f5113862a7001bc86",
+    "mobileSourceCommit": "23580bf42552c2ad9f6385062b700040c85943c4",
+    "previousPublicCommit": "0d644a45172a95aeb5515399a8bd065828767b05",
+    "preview": "build 5023 native simulator; no physical-device acceptance claim",
+    "scope": "Two download pages plus dependencies and exact release-index hashes; no APK, DNS, releases, policies or unrelated HTML changed"
   }
 }
