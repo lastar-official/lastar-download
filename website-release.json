@@ -127,8 +127,8 @@
     },
     {
       "path": "download/index.html",
-      "size": 46920,
-      "sha256": "5f93f103646dc148a25bb84c6a850c3b3c9369eb51d18775209326366d9d7bd5"
+      "size": 47114,
+      "sha256": "70af0b840f2806dc32a3d2778260d6d549b93be77d2df6ecf58e45ebc996b633"
     },
     {
       "path": "faq/index.html",
@@ -452,8 +452,8 @@
     },
     {
       "path": "en/download/index.html",
-      "size": 46712,
-      "sha256": "de66368d438915dfc251b3504e2bf64f3f93be8ecc0fe05a22a1f5dd9b584ec9"
+      "size": 46936,
+      "sha256": "a73f5e65bd107a1e324c296246b2a7406311b125aae3a57c234aab2acd07e001"
     },
     {
       "path": "app/privacy/index.html",
@@ -484,6 +484,11 @@
       "path": "assets/download/soul-space-5023.webp",
       "size": 207924,
       "sha256": "426132facdeb8ffb6ff1530a354a35e2f464409f01f7dc72d6e25a187588facd"
+    },
+    {
+      "path": "assets/download/soul-space-5030.webp",
+      "size": 85706,
+      "sha256": "c5cc0800eb1d68258b9ee230a97138d2bd14eb2aed26905a732abaa9d5465c82"
     }
   ],
   "delivery": "Next-compiled SSR HTML + first-party progressive enhancement; no App Router hydration",
@@ -499,16 +504,16 @@
     "state": "preparing",
     "apkPublic": false,
     "mainlandCommunityEnabled": false,
-    "candidateBuild": 5023,
-    "candidateSha256": "0c95b33b64b4ca07b60dc4c1172d847de4c25b90bb82ba4c6b9d3f679b3f0343",
-    "at": "2026-11-19T15:01:25.313Z",
+    "candidateBuild": 5030,
+    "candidateSha256": "ff03bc08e3ed756ca14ccef3e945377552dfbf57ff9b8cfd3782404b81c0aaef",
+    "at": "2026-11-21T02:47:45.774Z",
     "effectiveAppPolicies": false
   },
   "downloadPageUpgrade": {
-    "websiteSourceCommit": "1fd1c8db179f19dc9a62692f5113862a7001bc86",
-    "mobileSourceCommit": "23580bf42552c2ad9f6385062b700040c85943c4",
-    "previousPublicCommit": "0d644a45172a95aeb5515399a8bd065828767b05",
-    "preview": "build 5023 native simulator; no physical-device acceptance claim",
+    "websiteSourceCommit": "8e82dfb8e7cb271430ba31a7adcc1ef04caf81d1",
+    "mobileSourceCommit": "94b4a4f9ee122f35fae70b1f5b0159f195ef933b",
+    "previousPublicCommit": "8e7689e5ee28ed274f11063ebc0217ed6dea96ce",
+    "preview": "Build 5030 physical HONOR 200 screenshot. Optional modules not accepted are closed; no full public-release acceptance claim.",
     "scope": "Two download pages plus dependencies and exact release-index hashes; no APK, DNS, releases, policies or unrelated HTML changed"
   }
 }
