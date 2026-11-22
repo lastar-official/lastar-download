@@ -127,8 +127,8 @@
     },
     {
       "path": "download/index.html",
-      "size": 47114,
-      "sha256": "70af0b840f2806dc32a3d2778260d6d549b93be77d2df6ecf58e45ebc996b633"
+      "size": 47329,
+      "sha256": "51abd2d7111a3d7b8427886adae69561f41f292de3a299f2d3df57012e15bf78"
     },
     {
       "path": "faq/index.html",
@@ -452,8 +452,8 @@
     },
     {
       "path": "en/download/index.html",
-      "size": 46936,
-      "sha256": "a73f5e65bd107a1e324c296246b2a7406311b125aae3a57c234aab2acd07e001"
+      "size": 47150,
+      "sha256": "156df2b56476a81f3048e72075f2391a6dc3d0578c97ef4ff27b9766ba4625e4"
     },
     {
       "path": "app/privacy/index.html",
@@ -489,6 +489,11 @@
       "path": "assets/download/soul-space-5030.webp",
       "size": 85706,
       "sha256": "c5cc0800eb1d68258b9ee230a97138d2bd14eb2aed26905a732abaa9d5465c82"
+    },
+    {
+      "path": "assets/download/soul-space-5038.webp",
+      "size": 222474,
+      "sha256": "6061cbb0979ba7c3910252e29fe0f67c36b9c9044de2d919f5ff0315928ac7f9"
     }
   ],
   "delivery": "Next-compiled SSR HTML + first-party progressive enhancement; no App Router hydration",
@@ -504,16 +509,23 @@
     "state": "preparing",
     "apkPublic": false,
     "mainlandCommunityEnabled": false,
-    "candidateBuild": 5030,
-    "candidateSha256": "ff03bc08e3ed756ca14ccef3e945377552dfbf57ff9b8cfd3782404b81c0aaef",
-    "at": "2026-11-21T02:47:45.774Z",
+    "candidateBuild": 5038,
+    "candidateSha256": "26aa384876f0158259f295babbabded883b112fa72798598ca25c6fdb4a3c5b2",
+    "at": "2026-11-21T19:51:04.990722+00:00",
     "effectiveAppPolicies": false
   },
   "downloadPageUpgrade": {
-    "websiteSourceCommit": "8e82dfb8e7cb271430ba31a7adcc1ef04caf81d1",
-    "mobileSourceCommit": "94b4a4f9ee122f35fae70b1f5b0159f195ef933b",
-    "previousPublicCommit": "8e7689e5ee28ed274f11063ebc0217ed6dea96ce",
-    "preview": "Build 5030 physical HONOR 200 screenshot. Optional modules not accepted are closed; no full public-release acceptance claim.",
+    "websiteSourceCommit": "ed90fbc340ca3e781c27e78bf8f610bee1f2c7e3",
+    "mobileSourceCommit": "cb4a9bc68fe53b0a7deae775cc0a1161be8e00cd",
+    "previousPublicCommit": "7fc964bc5d81bdfe5c28969012aed33ce3c5c44c",
+    "nativePreview": {
+      "kind": "physical_native",
+      "build": 5038,
+      "sourceCommit": "cb4a9bc68fe53b0a7deae775cc0a1161be8e00cd",
+      "asset": "/assets/download/soul-space-5038.webp"
+    },
+    "preview": "Build 5038 physical Realme final release screenshot, verified exact APK hash. Performed checks have limited scope; no complete public-release acceptance claim.",
+    "preparedAt": "2026-11-21T19:51:04.990770+00:00",
     "scope": "Two download pages plus dependencies and exact release-index hashes; no APK, DNS, releases, policies or unrelated HTML changed"
   }
 }
